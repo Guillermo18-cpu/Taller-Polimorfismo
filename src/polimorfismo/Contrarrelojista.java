@@ -1,6 +1,6 @@
 package polimorfismo;
 
-public abstract class Contrarrelojista extends Ciclista {
+public class Contrarrelojista extends Ciclista {
 
     private double velocidadMaxima;
 
