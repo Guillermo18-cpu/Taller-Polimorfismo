@@ -19,11 +19,9 @@ public abstract class Contrarrelojista extends Ciclista {
 
     @Override
     public String imprimirTipo() {
-        return "Soy un ciclista";
+        return "Es un Contrarrelojista";
     }
 
-    public void imprimirDatos() {
 
-    }
 
 }
