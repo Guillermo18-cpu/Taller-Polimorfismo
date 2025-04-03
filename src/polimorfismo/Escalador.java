@@ -31,9 +31,7 @@ public class Escalador extends Ciclista{
     return getNombre() +" es un Contrarrelojista";
     }
 
-    public void imprimirDatos(){
-
-    }
+   
     
     
 }

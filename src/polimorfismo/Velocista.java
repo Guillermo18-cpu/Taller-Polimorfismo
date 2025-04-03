@@ -34,9 +34,7 @@ public class Velocista extends Ciclista{
         return getNombre() +" es un Velocista";
     }
     
-    public void imprimirDatos(){
-    
-    }
+ 
    
    
 }
