@@ -4,7 +4,7 @@ public abstract class Ciclista {
 
     private int identificador;
     private String nombre;
-    private int tiempoAcumulado;
+    private int tiempoAcumulado=0;
 
     public Ciclista(int identificador, String nombre) {
         this.identificador = identificador;
@@ -38,7 +38,8 @@ public abstract class Ciclista {
     public abstract String imprimirTipo();
 
     public void imprimirDatos() {
-
+        
+        System.out.println("ID: " + identificador + ", Nombre: " + nombre + ", Tiempo: " + tiempoAcumulado);
     }
 
 } 
