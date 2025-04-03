@@ -1,6 +1,9 @@
+package polimorfismo;
+
 import java.util.List;
 
 public class Equipo {
+
     private String nombreEquipo, pais;
     private int tiempoTotalEquipo;
     private List<Ciclista> ciclistas;
@@ -8,23 +11,28 @@ public class Equipo {
     public String getNombreEquipo() {
         return nombreEquipo;
     }
+
     public void setNombreEquipo(String nombreEquipo) {
         this.nombreEquipo = nombreEquipo;
     }
+
     public String getPais() {
         return pais;
     }
+
     public void setPais(String pais) {
         this.pais = pais;
     }
+
     public int getTiempoTotalEquipo() {
         return tiempoTotalEquipo;
     }
+
     public void setTiempoTotalEquipo(int tiempoTotalEquipo) {
         this.tiempoTotalEquipo = tiempoTotalEquipo;
     }
 
-    public void añadirCiclista(Ciclista) {
+    public void añadirCiclista(Ciclista ciclista) {
 
     }
 
@@ -37,9 +45,7 @@ public class Equipo {
     }
 
     public void imprimirDatosCiclistaPorld() {
-        
+
     }
 
-    public static void main(String[] args) {
-    }
 }
