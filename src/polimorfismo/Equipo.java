@@ -1,27 +1,24 @@
-package polimorfismo;
-
-import java.util.List;
+import java.util.ArrayList;
 
 public class Equipo {
 
-    private String nombreEquipo, pais;
+    private String nombre;
+    private String pais;
     private int tiempoTotalEquipo;
-    private List<Ciclista> ciclistas;
+    private ArrayList<Ciclista> ciclistas;
 
-    public String getNombreEquipo() {
-        return nombreEquipo;
+    public Equipo(String nombre, String pais) {
+        this.nombre = nombre;
+        this.pais = pais;
+        this.ciclistas = new ArrayList<>();
     }
 
-    public void setNombreEquipo(String nombreEquipo) {
-        this.nombreEquipo = nombreEquipo;
+    public String getNombre() {
+        return nombre;
     }
 
     public String getPais() {
         return pais;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
     }
 
     public int getTiempoTotalEquipo() {
@@ -33,19 +30,45 @@ public class Equipo {
     }
 
     public void añadirCiclista(Ciclista ciclista) {
-
+        ciclistas.add(ciclista);
     }
 
-    public void imprimirDatosEquipo() {
-
+    public void listarCiclistas() {
+        for (int i = 0; i < ciclistas.size(); i++) {
+            Ciclista ciclista = ciclistas.get(i);
+            ciclista.imprimirDatos();
+            System.out.println("Tipo: " + ciclista.imprimirTipo());
+            System.out.println("Tiempo acumulado: " + ciclista.getTiempoAcumulado() + "\n");
+        }
     }
-
-    public void listarNombresCiclistas() {
-
+    
+    public void calcularTiempoTotal() {
+        int total = 0;
+        for (int i = 0; i < ciclistas.size(); i++) {
+            Ciclista ciclista = ciclistas.get(i);
+            total += ciclista.getTiempoAcumulado();
+        }
+        this.tiempoTotalEquipo = total;
     }
+    public static void main(String[] args) {
+        Equipo equipo = new Equipo("Equipo Integrador", "Colombia");
 
-    public void imprimirDatosCiclistaPorld() {
+        Velocista velocista = new Velocista(400.5, 1, "Santiago");
+        velocista.setVelocidadPromedioSprint(60.0);
+        velocista.setTiempoAcumulado(120);
 
+        Escalador escalador = new Escalador(3.5f, 8.0f, 2, "Samuel");
+        escalador.setTiempoAcumulado(130);
+
+        Contrarrelojista contrarrelojista = new Contrarrelojista(70.0, 3, "Guillermo");
+        contrarrelojista.setTiempoAcumulado(115);
+
+        equipo.añadirCiclista(velocista);
+        equipo.añadirCiclista(escalador);
+        equipo.añadirCiclista(contrarrelojista);
+        equipo.calcularTiempoTotal();
+        equipo.listarCiclistas();
+
+        System.out.println("Tiempo total del equipo: " + equipo.getTiempoTotalEquipo());
     }
-
 }
