@@ -22,6 +22,8 @@ public class Prueba {
         equipo.calcularTiempoTotal();
         equipo.listarNombresCiclistas();
         equipo.imprimirDatosCiclistaPorId(3);
+        equipo.buscarCiclista();
+        equipo.imprimirDatosEquipo();
 
         System.out.println("Tiempo total del equipo: " + equipo.getTiempoTotalEquipo());
     }
