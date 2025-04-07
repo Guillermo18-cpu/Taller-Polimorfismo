@@ -1,33 +1,46 @@
 package polimorfismo;
+
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Equipo {
 
+    static Scanner sc = new Scanner(System.in);
+
     private String nombre;
     private String pais;
-    private int tiempoTotalEquipo= 0;
+    private int tiempoTotalEquipo = 0;
+
+    public String getNombreEquipo() {
+        return nombre;
+    }
+
+    protected void setNombreEquipo(String nombre) {
+        this.nombre = nombre;
+    }
+
+    protected String getPais() {
+        return pais;
+    }
+
+    protected void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    protected int getTiempoTotalEquipo() {
+        return tiempoTotalEquipo;
+    }
+
+    protected void setTiempoTotalEquipo(int tiempoTotalEquipo) {
+        this.tiempoTotalEquipo = tiempoTotalEquipo;
+    }
+
     private ArrayList<Ciclista> ciclistas;
 
     public Equipo(String nombre, String pais) {
         this.nombre = nombre;
         this.pais = pais;
         this.ciclistas = new ArrayList<>();
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getPais() {
-        return pais;
-    }
-
-    public int getTiempoTotalEquipo() {
-        return tiempoTotalEquipo;
-    }
-
-    public void setTiempoTotalEquipo(int tiempoTotalEquipo) {
-        this.tiempoTotalEquipo = tiempoTotalEquipo;
     }
 
     public void añadirCiclista(Ciclista ciclista) {
@@ -42,7 +55,7 @@ public class Equipo {
             System.out.println("Tiempo acumulado: " + ciclista.getTiempoAcumulado() + "\n");
         }
     }
-    
+
     public void calcularTiempoTotal() {
         int total = 0;
         for (int i = 0; i < ciclistas.size(); i++) {
@@ -51,15 +64,42 @@ public class Equipo {
         }
         this.tiempoTotalEquipo = total;
     }
-    
-    public void imprimirDatosCiclistaPorId (int id){
-        for (Ciclista c : ciclistas){
-            if (c.getIdentificador()== id){
-                c.imprimirDatos();
-                return;
+
+    public void imprimirDatosCiclistaPorId(int id) {
+        for (int i = 0; i < ciclistas.size(); i++) {
+            Ciclista ciclista = ciclistas.get(i);
+            if (ciclista.getIdentificador() == id) {
+                ciclista.imprimirDatos();
             }
         }
-        System.out.println("No se encontro un con ID " + id);
+        System.out.println("No se encontro un ciclista con el ID: " + id);
     }
 
+    protected void imprimirDatosEquipo() {
+        System.out.println("Equipo: " + nombre);
+        System.out.println("País: " + pais);
+        System.out.println("Tiempo total acumulado: " + tiempoTotalEquipo + " minutos");
+    }
+
+    void buscarCiclista() {
+        System.out.println("Buscar Ciclista");
+        System.out.println("Digitame el codigo del ciclista que quieres buscar: ");
+        int ciclistaSearch = sc.nextInt();
+
+        int validacion = 0;
+        boolean bandera = false;
+
+        for (int i = 0; i < ciclistas.size(); i++) {
+            if (ciclistaSearch == ciclistas.get(i).getIdentificador()) {
+                validacion = i;
+                bandera = true;
+            }
+        }
+
+        if (bandera == true) {
+            System.out.println("El nombre del ciclista es: " + ciclistas.get(validacion).getNombre());
+        } else {
+            System.out.println("El ciclsita no esta registrado");
+        }
+    }
 }
