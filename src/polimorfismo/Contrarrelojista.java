@@ -26,7 +26,7 @@ public class Contrarrelojista extends Ciclista {
     protected void imprimirDatos() {
 
         super.imprimirDatos();
-        System.out.println("Velocidad Máxima (km/h): " + velocidadMaxima);
+        System.out.println("Velocidad Maxima (km/h): " + velocidadMaxima);
 
     }
 
