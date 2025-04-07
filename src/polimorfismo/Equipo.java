@@ -99,5 +99,4 @@ public class Equipo {
             System.out.println("El ciclsita no esta registrado");
         }
     }
-
 }
