@@ -35,11 +35,15 @@ public abstract class Ciclista {
         this.tiempoAcumulado = tiempoAcumulado;
     }
 
-    public abstract String imprimirTipo();
+    protected abstract String imprimirTipo();
 
-    public void imprimirDatos() {
+    protected void imprimirDatos() {
         
-        System.out.println("ID: " + identificador + ", Nombre: " + nombre + ", Tiempo: " + tiempoAcumulado);
+        System.out.println("----- DATOS CONTRARRELOJISTA -----");
+        System.out.println("Identificador: " + getIdentificador());
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Tiempo Acumulado" + getTiempoAcumulado() + "(min): " );
+        System.out.println("-----------------------------------\n");
     }
 
 } 
