@@ -41,7 +41,7 @@ public abstract class Ciclista {
         System.out.println("-----------------------------------\n");
         System.out.println("Identificador: " + getIdentificador());
         System.out.println("Nombre: " + getNombre());
-        System.out.println("Tiempo Acumulado: " + getTiempoAcumulado() + "(min) ");
+        System.out.println("Tiempo acumulado: " + getTiempoAcumulado() + "(min) ");
         System.out.println("-----------------------------------\n");
     }
 
