@@ -1,4 +1,3 @@
-
 package polimorfismo;
 
 
@@ -35,7 +34,13 @@ public class Velocista extends Ciclista{
     }
     
  
-   
+ @Override
+ public void imprimirDatos(){
+    super.imprimirDatos();
+    System.out.println("Potencia Promedio: "+ potenciaPromedio + " W");
+    System.out.println("Velocidad Sprint Promedio: "+ velocidadPromedioSprint + " km/h");
+ 
+ }
    
 }
 
