@@ -52,7 +52,7 @@ public class Equipo {
             Ciclista ciclista = ciclistas.get(i);
             ciclista.imprimirDatos();
             System.out.println("Tipo: " + ciclista.imprimirTipo());
-            System.out.println("Tiempo acumulado: " + ciclista.getTiempoAcumulado() + "\n");
+            System.out.println("Tiempo acumulado: " + ciclista.getTiempoAcumulado() + "(min)\n");
         }
     }
 

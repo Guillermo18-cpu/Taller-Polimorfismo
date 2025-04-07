@@ -19,7 +19,7 @@ public class Contrarrelojista extends Ciclista {
 
     @Override
     protected String imprimirTipo() {
-        return "Contrarrelojista" + getNombre();
+        return getNombre() + " es un Contrarrelojista";
     }
 
     @Override
