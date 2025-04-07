@@ -82,8 +82,9 @@ public class Equipo {
     }
 
     void buscarCiclista() {
-        System.out.println("Buscar Ciclista");
-        System.out.println("Digitame el codigo del ciclista que quieres buscar: ");
+        System.out.println("\nBuscar Ciclista");
+        System.out.println("Digitame el identificador del ciclista que quieres buscar: ");
+
         int ciclistaSearch = sc.nextInt();
 
         int validacion = 0;

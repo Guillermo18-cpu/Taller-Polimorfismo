@@ -21,7 +21,6 @@ public class Prueba {
         equipo.añadirCiclista(contrarrelojista);
         equipo.calcularTiempoTotal();
         equipo.listarNombresCiclistas();
-        equipo.imprimirDatosCiclistaPorId(3);
         equipo.buscarCiclista();
         equipo.imprimirDatosEquipo();
 
