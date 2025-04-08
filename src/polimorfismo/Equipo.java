@@ -77,7 +77,7 @@ public class Equipo {
 
     protected void imprimirDatosEquipo() {
         System.out.println("Equipo: " + nombre);
-        System.out.println("País: " + pais);
+        System.out.println("Pais: " + pais);
         System.out.println("Tiempo total acumulado: " + tiempoTotalEquipo + " minutos");
     }
 
