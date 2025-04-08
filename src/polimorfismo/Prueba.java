@@ -3,7 +3,7 @@ package polimorfismo;
 public class Prueba {
 
     public static void main(String[] args) {
-        
+
         Equipo equipo = new Equipo("Equipo Integrador", "Colombia");
 
         Velocista velocista = new Velocista(400.5, 1, "Santiago");
@@ -20,10 +20,9 @@ public class Prueba {
         equipo.añadirCiclista(escalador);
         equipo.añadirCiclista(contrarrelojista);
         equipo.calcularTiempoTotal();
-        equipo.listarNombresCiclistas();
-        equipo.buscarCiclista();
-        equipo.imprimirDatosEquipo();
 
-        System.out.println("Tiempo total del equipo: " + equipo.getTiempoTotalEquipo());
+        equipo.imprimirDatosEquipo();
+        equipo.imprimirDatosCiclistaPorId(0);
+        
     }
 }

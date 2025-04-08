@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Equipo {
 
-    static Scanner sc = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
 
     private String nombre;
     private String pais;
@@ -65,42 +65,47 @@ public class Equipo {
         this.tiempoTotalEquipo = total;
     }
 
-    public void imprimirDatosCiclistaPorId(int id) {
-        for (int i = 0; i < ciclistas.size(); i++) {
-            Ciclista ciclista = ciclistas.get(i);
-            if (ciclista.getIdentificador() == id) {
-                ciclista.imprimirDatos();
-            }
-        }
-        System.out.println("No se encontro un ciclista con el ID: " + id);
-    }
+
 
     protected void imprimirDatosEquipo() {
+        System.out.println("\n");
         System.out.println("Equipo: " + nombre);
         System.out.println("Pais: " + pais);
-        System.out.println("Tiempo total acumulado: " + tiempoTotalEquipo + " minutos");
+        System.out.println("\nLista de Ciclistas:");
+        for (Ciclista ciclista : ciclistas) {
+            System.out.println("ID: " + ciclista.getIdentificador() + " - Nombre: " + ciclista.getNombre());
+        }
     }
 
-    void buscarCiclista() {
-        System.out.println("\nBuscar Ciclista");
-        System.out.println("Digitame el identificador del ciclista que quieres buscar: ");
 
+
+    public void imprimirDatosCiclistaPorId(int id) {
+        System.out.println("\nBuscar Ciclista");
+        System.out.print("Digitame el identificador del ciclista que quieres buscar: ");
         int ciclistaSearch = sc.nextInt();
 
-        int validacion = 0;
-        boolean bandera = false;
+        boolean encontrado = false;
 
-        for (int i = 0; i < ciclistas.size(); i++) {
-            if (ciclistaSearch == ciclistas.get(i).getIdentificador()) {
-                validacion = i;
-                bandera = true;
+        for (Ciclista ciclista : ciclistas) {
+            if (ciclista.getIdentificador() == ciclistaSearch) {
+                    
+                System.out.println("\n");
+                System.out.println("Datos del ciclista ");
+                System.out.println("ID: " + ciclista.getIdentificador());
+                System.out.println("Nombre: " + ciclista.getNombre());
+                System.out.println("Equipo: " +nombre);
+                System.out.println("Especialidad: " + ciclista.imprimirTipo());
+                System.out.println("Tiempo Acumulado (individual): " + ciclista.getTiempoAcumulado() + " minutos");
+
+                System.out.println("\nTiempo Total del Equipo: " + this.getTiempoTotalEquipo() + " minutos");
+                encontrado = true;
+                break;
             }
         }
 
-        if (bandera == true) {
-            System.out.println("El nombre del ciclista es: " + ciclistas.get(validacion).getNombre());
-        } else {
-            System.out.println("El ciclsita no esta registrado");
+        if (!encontrado) {
+            System.out.println("No se encontró un ciclista con el ID: " + ciclistaSearch);
         }
     }
+
 }
