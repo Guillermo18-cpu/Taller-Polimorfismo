@@ -65,8 +65,6 @@ public class Equipo {
         this.tiempoTotalEquipo = total;
     }
 
-
-
     protected void imprimirDatosEquipo() {
         System.out.println("\n");
         System.out.println("Equipo: " + nombre);
@@ -77,8 +75,6 @@ public class Equipo {
         }
     }
 
-
-
     public void imprimirDatosCiclistaPorId(int id) {
         System.out.println("\nBuscar Ciclista");
         System.out.print("Digitame el identificador del ciclista que quieres buscar: ");
@@ -88,15 +84,15 @@ public class Equipo {
 
         for (Ciclista ciclista : ciclistas) {
             if (ciclista.getIdentificador() == ciclistaSearch) {
-                    
+
                 System.out.println("\n");
                 System.out.println("Datos del ciclista ");
                 System.out.println("ID: " + ciclista.getIdentificador());
                 System.out.println("Nombre: " + ciclista.getNombre());
-                System.out.println("Equipo: " +nombre);
+                System.out.println("Equipo: " + nombre);
                 System.out.println("Especialidad: " + ciclista.imprimirTipo());
+                ciclista.imprimirDatos();
                 System.out.println("Tiempo Acumulado (individual): " + ciclista.getTiempoAcumulado() + " minutos");
-
                 System.out.println("\nTiempo Total del Equipo: " + this.getTiempoTotalEquipo() + " minutos");
                 encontrado = true;
                 break;

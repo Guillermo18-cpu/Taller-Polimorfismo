@@ -19,13 +19,12 @@ public class Contrarrelojista extends Ciclista {
 
     @Override
     protected String imprimirTipo() {
-        return "Contrarrelojista" + getNombre();
+        return getNombre() + " es un Contrarrelojista";
     }
 
     @Override
     protected void imprimirDatos() {
 
-        super.imprimirDatos();
         System.out.println("Velocidad Maxima (km/h): " + velocidadMaxima);
 
     }

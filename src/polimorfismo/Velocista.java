@@ -1,8 +1,7 @@
 package polimorfismo;
 
+public class Velocista extends Ciclista {
 
-public class Velocista extends Ciclista{
-    
     private double potenciaPromedio, velocidadPromedioSprint;
 
     public Velocista(double potenciaPromedio, int identificador, String nombre) {
@@ -25,22 +24,18 @@ public class Velocista extends Ciclista{
     public void setVelocidadPromedioSprint(double velocidadPromedioSprint) {
         this.velocidadPromedioSprint = velocidadPromedioSprint;
     }
-    
-    
-  
-    @Override
-    public String imprimirTipo(){
-        return getNombre() +" es un Velocista";
-    }
-    
- 
- @Override
- public void imprimirDatos(){
-    super.imprimirDatos();
-    System.out.println("Potencia Promedio: "+ potenciaPromedio + " W");
-    System.out.println("Velocidad Sprint Promedio: "+ velocidadPromedioSprint + " km/h");
- 
- }
-   
-}
 
+    @Override
+    public String imprimirTipo() {
+        return getNombre() + " es un Velocista";
+    }
+
+    @Override
+    public void imprimirDatos() {
+
+        System.out.println("Potencia Promedio: " + potenciaPromedio + " W");
+        System.out.println("Velocidad Sprint Promedio: " + velocidadPromedioSprint + " km/h");
+
+    }
+
+}
