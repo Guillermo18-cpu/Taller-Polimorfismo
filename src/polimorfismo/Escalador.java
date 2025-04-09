@@ -1,7 +1,7 @@
-
 package polimorfismo;
 
-public class Escalador extends Ciclista{
+public class Escalador extends Ciclista {
+
     private float aceleracionPromedio, gradoRampa;
 
     public Escalador(float aceleracionPromedio, float gradoRampa, int identificador, String nombre) {
@@ -27,18 +27,15 @@ public class Escalador extends Ciclista{
     }
 
     @Override
-    public String imprimirTipo(){
-    return getNombre() +" es un Escalador";
+    public String imprimirTipo() {
+        return getNombre() + " es un Escalador";
     }
 
-   
-    
     @Override
-    public void imprimirDatos(){
-        super.imprimirDatos();
-        System.out.println("Aceleracion promedio: "+aceleracionPromedio+ " m/s^2");
-        System.out.println("Grado de rampa soportada: "+gradoRampa+ " grados");
-    
+    public void imprimirDatos() {
+
+        System.out.println("Aceleracion promedio: " + aceleracionPromedio + " m/s^2");
+        System.out.println("Grado de rampa soportada: " + gradoRampa + " grados");
+
     }
 }
-

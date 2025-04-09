@@ -23,6 +23,6 @@ public class Prueba {
 
         equipo.imprimirDatosEquipo();
         equipo.imprimirDatosCiclistaPorId(0);
-        
+
     }
 }
